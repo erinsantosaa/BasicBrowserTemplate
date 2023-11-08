@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         goButton.setOnClickListener{
             val processedURL = processURL(urlEditText.text.toString())
             webView.loadUrl(processedURL)
+            webView.settings.javaScriptEnabled = true
         }
 
     }
