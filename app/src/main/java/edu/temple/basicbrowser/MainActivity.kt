@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                 super.onPageFinished(view, url)
             }
         }
+        goButton.setOnClickListener{
+            webView.loadUrl(urlEditText.text.toString())
+        }
 
     }
 }
