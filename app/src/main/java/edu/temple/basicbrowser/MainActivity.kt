@@ -28,8 +28,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
         goButton.setOnClickListener{
-            webView.loadUrl(urlEditText.text.toString())
+            val processedURL = processURL(urlEditText.text.toString())
+            webView.loadUrl(processedURL)
         }
 
+    }
+    private fun processURL(userInput: String): String {
+        return if (!userInput.contains("://")) {
+            "https://$userInput"
+        } else {
+            userInput
+        }
     }
 }
